@@ -88,6 +88,9 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+
+        // Security Debug filter:
+        // grails.plugin.springsecurity.debug.useFilter = true
     }
     production {
         grails.logging.jul.usebridge = false
@@ -101,7 +104,7 @@ log4j.main = {
         file name: 'file', file: 'logs/development.log'
     }
     root {
-        debug 'stdout', 'file'
+        info 'stdout', 'file'
     }
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -117,8 +120,9 @@ log4j.main = {
            'org.apache',
            'net.sf.ehcache.hibernate'
 
-    debug 'org.springframework.security'
-    info 'grails.plugin.springsecurity.web.filter.DebugFilter'
+    // Security Debug info:
+    // debug 'org.springframework.security'
+    // info 'grails.plugin.springsecurity.web.filter.DebugFilter'
 }
 
 
@@ -127,7 +131,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'excaalibur.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'excaalibur.UserRole'
 grails.plugin.springsecurity.authority.className = 'excaalibur.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/**':                            ['permitAll'],
+	'/':                              ['permitAll'],
 	'/home/**':                       ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],

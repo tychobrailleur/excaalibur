@@ -7,6 +7,7 @@ class UrlMappings {
             }
         }
 
+        '/send'(controller: 'sendEvent', action: 'send')
         '/'(controller: 'home', action: 'index')
         "500"(view:'/error')
 	}
