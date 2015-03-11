@@ -97,12 +97,12 @@ environments {
 
 // log4j configuration
 log4j.main = {
-    // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
-
+    appenders {
+        file name: 'file', file: 'logs/development.log'
+    }
+    root {
+        debug 'stdout', 'file'
+    }
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -111,7 +111,29 @@ log4j.main = {
            'org.codehaus.groovy.grails.commons',            // core / classloading
            'org.codehaus.groovy.grails.plugins',            // plugins
            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+           'org.codehaus.groovy.grails.io.support',
            'org.springframework',
            'org.hibernate',
+           'org.apache',
            'net.sf.ehcache.hibernate'
+
+    debug 'org.springframework.security'
+    info 'grails.plugin.springsecurity.web.filter.DebugFilter'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'excaalibur.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'excaalibur.UserRole'
+grails.plugin.springsecurity.authority.className = 'excaalibur.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/**':                            ['permitAll'],
+	'/home/**':                       ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/assets/**':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]

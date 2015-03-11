@@ -3,3 +3,4 @@ target/
 .idea
 *.iml
 .sass-cache/
+web-app/plugins/
