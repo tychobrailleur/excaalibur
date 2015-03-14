@@ -90,11 +90,22 @@ environments {
         grails.logging.jul.usebridge = true
 
         // Security Debug filter:
-        // grails.plugin.springsecurity.debug.useFilter = true
+        grails.plugin.springsecurity.debug.useFilter = true
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
+    }
+}
+
+rabbitmq {
+    connectionfactory {
+        username = 'guest'
+        password = 'guest'
+        hostname = 'localhost'
+    }
+    queues = {
+        exchange name: 'excaalibur.topic', type: topic, durable: true, autoDelete: false
     }
 }
 
@@ -121,8 +132,8 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 
     // Security Debug info:
-    // debug 'org.springframework.security'
-    // info 'grails.plugin.springsecurity.web.filter.DebugFilter'
+    debug 'org.springframework.security'
+    info 'grails.plugin.springsecurity.web.filter.DebugFilter'
 }
 
 
@@ -131,13 +142,16 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'excaalibur.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'excaalibur.UserRole'
 grails.plugin.springsecurity.authority.className = 'excaalibur.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/home/**':                       ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
-	'/assets/**':                     ['permitAll'],
-	'/**/js/**':                      ['permitAll'],
-	'/**/css/**':                     ['permitAll'],
-	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
+	'/': ['permitAll'],
+	'/home/**': ['permitAll'],
+	'/index': ['permitAll'],
+	'/index.gsp': ['permitAll'],
+	'/send': ['permitAll'],    
+	'/assets/**': ['permitAll'],
+    '/dbconsole/**': ['permitAll'],
+    '/console/**': ['permitAll'],    
+	'/**/js/**': ['permitAll'],
+	'/**/css/**': ['permitAll'],
+	'/**/images/**': ['permitAll'],
+	'/**/favicon.ico': ['permitAll']
 ]

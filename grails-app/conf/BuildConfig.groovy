@@ -46,6 +46,9 @@ grails.project.dependency.resolution = {
         compile ':markdown:1.1.1'
         compile ':quartz:1.0.2'
         compile ':spring-events:1.2'
+        compile ':console:1.5.4'
+        compile ':dbconsole:1.1'
+        compile ':rabbitmq:1.0.0'
 
         runtime ':cache-headers:1.1.7'
         runtime ':hibernate4:4.3.6.1'
