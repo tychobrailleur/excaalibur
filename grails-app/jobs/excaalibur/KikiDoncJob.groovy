@@ -2,7 +2,7 @@ package excaalibur
 
 class KikiDoncJob {
     static triggers = {
-      simple repeatInterval: 5000l // execute job once in 5 seconds
+      simple repeatInterval: 30000l // execute job once in 30 seconds
     }
 
     def execute() {
