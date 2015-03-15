@@ -150,6 +150,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/assets/**': ['permitAll'],
     '/dbconsole/**': ['permitAll'],
     '/console/**': ['permitAll'],
+    '/header.tpl.html': ['permitAll'],
   //  '/messages': ['permitAll'],
 	'/**/js/**': ['permitAll'],
 	'/**/css/**': ['permitAll'],

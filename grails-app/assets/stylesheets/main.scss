@@ -1,3 +1,16 @@
 body {
     background-color: #ddd;
+    font: 14px Helvetica,sans-seif normal;
+}
+
+.messages {
+  border-collapse: collapse;
+
+  td, th {
+    border: 1px solid #333;
+  }
+
+  td {
+    padding: 10px;
+  }
 }

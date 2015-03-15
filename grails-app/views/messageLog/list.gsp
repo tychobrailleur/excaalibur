@@ -6,9 +6,20 @@
     <meta name='layout' content='main' />
 </head>
 <body>
+<h2>Messages</h2>
+<table class="messages">
+    <thead>
+    <th>ID</th>
+    <th>Message</th>
+    <th>Date Created</th>
+    </thead>
 <g:each var="message" in="${messages}">
-    <p>Message: ${message.message}</p>
-    <p>Date created: ${message.dateCreated}</p>
+  <tr>
+    <td>${message.id}</td>
+    <td>${message.message}</td>
+    <td>${message.dateCreated}</td>
+  </tr>
 </g:each>
+</table>
 </body>
 </html>
