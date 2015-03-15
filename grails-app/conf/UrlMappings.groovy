@@ -7,6 +7,8 @@ class UrlMappings {
             }
         }
 
+        '/messages'(controller: 'messageLog', action: 'list')
+
         '/send'(controller: 'sendEvent', action: 'send')
         '/'(controller: 'home', action: 'index')
         "500"(view:'/error')

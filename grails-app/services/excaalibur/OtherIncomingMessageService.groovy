@@ -3,8 +3,7 @@ package excaalibur
 import grails.transaction.Transactional
 
 import grails.converters.*
-import org.codehaus.groovy.grails.web.json.* // package containing JSONObject, JSONArray,...
-
+import org.codehaus.groovy.grails.web.json.*
 
 
 @Transactional
@@ -16,5 +15,7 @@ class OtherIncomingMessageService {
         def o = JSON.parse(m) // Parse a JSON String
 
         log.info("Code = ${o.code}")
+
+        publishEvent(new MessageEvent(o.code, m, this))
     }
 }

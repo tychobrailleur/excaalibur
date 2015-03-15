@@ -8,7 +8,7 @@ x = Bunny::Exchange.new(ch, :topic, 'excaalibur.topic', durable: true)
 
 data =<<DATA
 {
-  "code": "B522",
+  "code": "F111",
   "number": "5000030",
   "agent_id": 583
 }
