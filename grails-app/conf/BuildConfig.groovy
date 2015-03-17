@@ -31,6 +31,8 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        compile 'joda-time:joda-time:2.7'
+
         runtime 'org.postgresql:postgresql:9.3-1102-jdbc41'
         test 'org.grails:grails-datastore-test-support:1.0.2-grails-2.4'
     }
