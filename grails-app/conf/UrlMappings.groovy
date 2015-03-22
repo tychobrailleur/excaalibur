@@ -10,6 +10,8 @@ class UrlMappings {
         '/messages'(controller: 'messageLog', action: 'list')
 
         '/send'(controller: 'sendEvent', action: 'send')
+        '/send-vertx'(controller: 'sendEvent', action: 'sendVertx')
+
         '/'(controller: 'home', action: 'index')
         "500"(view:'/error')
     }

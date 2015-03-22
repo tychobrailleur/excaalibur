@@ -31,7 +31,11 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        compile 'joda-time:joda-time:2.7'
+        compile 'joda-time:joda-time:2.7', 
+                'io.vertx:vertx-core:2.1.5',
+                'io.vertx:lang-groovy:2.1.1-final',
+                'io.vertx:vertx-platform:2.1.5',
+                'io.vertx:vertx-hazelcast:2.1.5'
 
         runtime 'org.postgresql:postgresql:9.3-1102-jdbc41'
         test 'org.grails:grails-datastore-test-support:1.0.2-grails-2.4'
@@ -40,22 +44,22 @@ grails.project.dependency.resolution = {
     plugins {
         build ':jetty:3.0.0'
 
-        compile ':spring-security-core:2.0-RC4'
-        compile ':scaffolding:2.1.2'
-        compile ':cache:1.1.8'
-        compile ':asset-pipeline:2.1.4'
-        compile ':sass-asset-pipeline:2.1.1'
-        compile ':markdown:1.1.1'
-        compile ':quartz:1.0.2'
-        compile ':spring-events:1.2'
-        compile ':console:1.5.4'
-        compile ':dbconsole:1.1'
-        compile ':rabbitmq:1.0.0'
+        compile ':spring-security-core:2.0-RC4',
+                ':scaffolding:2.1.2',
+                ':cache:1.1.8',
+                ':asset-pipeline:2.1.4',
+                ':sass-asset-pipeline:2.1.1',
+                ':markdown:1.1.1',
+                ':quartz:1.0.2',
+                ':spring-events:1.2',
+                ':console:1.5.4',
+                ':dbconsole:1.1',
+                ':rabbitmq:1.0.0'
 
-        runtime ':cache-headers:1.1.7'
-        runtime ':hibernate4:4.3.6.1'
-        runtime ':jquery:1.11.1'
-        runtime ':database-migration:1.4.0'
+       runtime ':cache-headers:1.1.7',
+                ':hibernate4:4.3.6.1',
+                ':jquery:1.11.1',
+                ':database-migration:1.4.0'
 
         test ':build-test-data:2.4.0'
     }
