@@ -54,7 +54,8 @@ grails.project.dependency.resolution = {
                 ':spring-events:1.2',
                 ':console:1.5.4',
                 ':dbconsole:1.1',
-                ':rabbitmq:1.0.0'
+                ':rabbitmq:1.0.0',
+                ':routing:1.4.1'
 
        runtime ':cache-headers:1.1.7',
                 ':hibernate4:4.3.6.1',
