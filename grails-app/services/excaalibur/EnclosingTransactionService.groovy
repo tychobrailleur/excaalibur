@@ -19,7 +19,20 @@ class EnclosingTransactionService {
         try {
             nestedTransactionService.doSomething()
         } catch  (Exception e) {
-            log.error("Exception nested transaction", e)
+            log.error('Exception nested transaction', e)
         }
+    }
+
+    def doSomethingElse() {
+        createBook()
+        try {
+            throwSomeException()
+        } catch (Exception e) {
+            log.error('Exception thrown', e)
+        }
+    }
+
+    private throwSomeException() {
+        throw new RuntimeException('expected')
     }
 }
