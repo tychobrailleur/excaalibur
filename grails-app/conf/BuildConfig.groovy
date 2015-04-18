@@ -13,6 +13,8 @@ grails.project.fork = [
 grails.server.port.http = 9092
 
 grails.project.dependency.resolver = 'maven'
+grails.plugin.location.'routing' = '../grails-routing'
+grails.plugin.location.'friendly-url' = '../friendly-url'
 grails.project.dependency.resolution = {
     inherits('global')
     log 'error'
@@ -35,7 +37,8 @@ grails.project.dependency.resolution = {
                 'io.vertx:vertx-core:2.1.5',
                 'io.vertx:lang-groovy:2.1.1-final',
                 'io.vertx:vertx-platform:2.1.5',
-                'io.vertx:vertx-hazelcast:2.1.5'
+                'io.vertx:vertx-hazelcast:2.1.5',
+                'org.apache.camel:camel-websocket:2.15.0'
 
         runtime 'org.postgresql:postgresql:9.3-1102-jdbc41'
         test 'org.grails:grails-datastore-test-support:1.0.2-grails-2.4'
@@ -55,7 +58,9 @@ grails.project.dependency.resolution = {
                 ':console:1.5.4',
                 ':dbconsole:1.1',
                 ':rabbitmq:1.0.0',
-                ':routing:1.4.1'
+                ':routing:1.4.1',
+                ':friendly-url:0.1',
+                ':domain-explorer:0.1'
 
        runtime ':cache-headers:1.1.7',
                 ':hibernate4:4.3.6.1',

@@ -108,6 +108,9 @@ log4j.main = {
     // Security Debug info:
     debug 'org.springframework.security'
     info 'grails.plugin.springsecurity.web.filter.DebugFilter'
+
+    debug 'friendlyurl'
+    debug 'excaalibur'
 }
 
 
@@ -118,6 +121,7 @@ grails.plugin.springsecurity.authority.className = 'excaalibur.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/': ['permitAll'],
     '/home/**': ['permitAll'],
+    '/domain/**': ['permitAll'],
     '/index': ['permitAll'],
     '/index.gsp': ['permitAll'],
     '/send': ['permitAll'],

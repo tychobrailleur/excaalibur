@@ -12,6 +12,8 @@ class UrlMappings {
         '/send'(controller: 'sendEvent', action: 'send')
         '/send-vertx'(controller: 'sendEvent', action: 'sendVertx')
 
+        '/test'(controller: 'home', action: 'test')
+        
         '/'(controller: 'home', action: 'index')
         "500"(view:'/error')
     }

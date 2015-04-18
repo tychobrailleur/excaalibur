@@ -1,3 +1,4 @@
+import excaalibur.Author
 import excaalibur.Match
 import excaalibur.User
 import org.joda.time.DateTime
@@ -17,5 +18,7 @@ class BootStrap {
 
         DateTime dateTime = new DateTime()
         new Match(home: user1, away: user2, matchDate: dateTime.plusDays(5)).save()
+
+        new Author(name: 'Charles Baudelaire').save()
     }
 }

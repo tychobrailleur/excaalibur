@@ -8,7 +8,11 @@
     <meta name='layout' content='main' />
 </head>
 <body ng-app="AppController">
+    <h3>Some UTF-8 characters beyond the latin characters &amp; symbols</h3>
+    
     <div ng-include="'header.tpl.html'"></div>
     <p>This is → a test</p>
+    <p>This is a Euro symbol: €</p>
+    <p>This is a non-breakable space: </p>
 </body>
 </html>
