@@ -17,7 +17,7 @@ class EnclosingTransactionServiceSpec extends IntegrationSpec {
         enclosingTransactionService.doSomething()
 
         then:
-         Book.count() == 1
+        Book.count() == 1
         Book.first().title == 'The Lord of the Rings'
     }
 
@@ -29,7 +29,7 @@ class EnclosingTransactionServiceSpec extends IntegrationSpec {
         enclosingTransactionService.doSomethingElse()
 
         then:
-         Book.count() == 1
+        Book.count() == 1
         Book.first().title == 'The Lord of the Rings'
     }
 }

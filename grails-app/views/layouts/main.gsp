@@ -3,7 +3,7 @@
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html ng-app lang="en" class="no-js"><!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html ng-app="app" lang="en" class="no-js"><!--<![endif]-->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,7 +15,7 @@
   		<asset:stylesheet src="main.css"/>
 		<g:layoutHead/>
 	</head>
-    <body<g:if test="${pageProperty(name:'body.ng-app')}"> ng-app="${pageProperty(name:'body.ng-app')}"</g:if>>
+    <body<g:if test="${pageProperty(name:'body.ng-controller')}"> ng-controller="${pageProperty(name:'body.ng-controller')}"</g:if>>
         <div id="header">
             <h1>Excaalibur</h1>
         </div>
