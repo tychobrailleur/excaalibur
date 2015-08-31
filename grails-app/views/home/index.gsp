@@ -21,7 +21,7 @@
         <input id="two" type="radio" name="simpleRadio" value="two" ng-model="form.simpleRadio"><label for="two">Two</label>
         <input id="three" type="radio" name="simpleRadio" value="three" ng-model="form.simpleRadio"><label for="three">Three</label>
 
-        <button ng-click="updateRadio(form)">Ok!</button>
+        <button ng-click="updateRadio()">Ok!</button>
     </div>
     <p>{{ form.simpleRadio }}</p>
     </div>
