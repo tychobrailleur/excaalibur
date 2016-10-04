@@ -3,7 +3,7 @@ package excaalibur
 class Author {
 
     String name
-    String slug = 'boo'
+    String slug
 
     static slugCandidate = [ 'name' ]
     static hasMany = [ books: Book ]

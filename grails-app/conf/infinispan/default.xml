@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:infinispan:config:5.1 http://www.infinispan.org/schemas/infinispan-config-5.1.xsd"
+        xmlns="urn:infinispan:config:5.1">
+
+    <global>
+
+        <!-- Async notification of listeners -->
+        <asyncListenerExecutor/>
+
+        <!-- Executor used for async transports -->
+        <asyncTransportExecutor factory="org.infinispan.executors.DefaultExecutorFactory">
+            <properties>
+                <property name="maxThreads" value="10"/>
+                <!-- Other properties are: threadNamePrefix, componentName, queueSize and threadPriority -->
+            </properties>
+        </asyncTransportExecutor>
+
+        <!-- Executor for scheduled eviction tasks -->
+        <evictionScheduledExecutor factory="org.infinispan.executors.DefaultScheduledExecutorFactory">
+            <properties>
+                <!-- Properties are: threadPriority, threadNamePrefix and componentName -->
+            </properties>
+        </evictionScheduledExecutor>
+
+        <!-- Executor for periodic flushing of replication queues -->
+        <replicationQueueScheduledExecutor factory="org.infinispan.executors.DefaultScheduledExecutorFactory">
+            <properties>
+                <!-- Properties are: threadPriority, threadNamePrefix and componentName -->
+            </properties>
+        </replicationQueueScheduledExecutor>
+
+        <!-- Configuration for JMX MBeans -->
+        <globalJmxStatistics enabled="true"
+                             cacheManagerName="cacheManager"
+                             jmxDomain="infinispan"
+                             allowDuplicateDomains="true"/>
+
+        <!-- Transport configururation including configuration file for JGropups -->
+        <transport  clusterName='sampleCacheCluster'>
+            <properties>
+                <property name="configurationFile"
+                          value="infinispan/jgroups-default.xml" />
+            </properties>
+        </transport>
+
+    </global>
+
+    <default>
+
+        <clustering mode="replication">
+            <sync/>
+        </clustering>
+
+        <!-- Times in milliseconds -->
+        <eviction maxEntries="10000"
+                  strategy="LRU"
+                  threadPolicy="PIGGYBACK"/>
+
+        <expiration lifespan="86400000"
+                    maxIdle="-1"
+                    reaperEnabled="true"
+                    wakeUpInterval="2000"/>
+
+        <jmxStatistics enabled="true"/>
+
+        <indexing enabled="false"/>
+
+        <!-- Make the caches transactional -->
+        <!--
+        <transaction transactionMode="TRANSACTIONAL"
+                     transactionManagerLookupClass="org.infinispan.transaction.lookup.GenericTransactionManagerLookup">
+        </transaction>
+        -->
+
+        <!-- Optimize put to not return previous value -->
+        <unsafe unreliableReturnValues="true"/>
+
+    </default>
+
+    <namedCache name="excaaliburCache">
+        <eviction maxEntries="100"
+                  strategy="LRU"
+                  threadPolicy="PIGGYBACK"/>
+        <expiration lifespan="120000"
+                    reaperEnabled="true"
+                    wakeUpInterval="2000"
+        />
+    </namedCache>
+
+</infinispan>

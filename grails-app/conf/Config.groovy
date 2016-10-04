@@ -118,9 +118,14 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'excaalibur.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'excaalibur.UserRole'
 grails.plugin.springsecurity.authority.className = 'excaalibur.Role'
+
+//grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+//grails.plugin.springsecurity.interceptUrlMap = [
     '/': ['permitAll'],
-    '/home/**': ['permitAll'],
+//    '/home/**': ['permitAll'],
+//    '/login/**': ['permitAll'],
     '/domain/**': ['permitAll'],
     '/index': ['permitAll'],
     '/index.gsp': ['permitAll'],
@@ -130,9 +135,10 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/dbconsole/**': ['permitAll'],
     '/console/**': ['permitAll'],
     '/header.tpl.html': ['permitAll'],
-  //  '/messages': ['permitAll'],
     '/**/js/**': ['permitAll'],
     '/**/css/**': ['permitAll'],
     '/**/images/**': ['permitAll'],
     '/**/favicon.ico': ['permitAll']
 ]
+
+healthcheck.checkDb = true

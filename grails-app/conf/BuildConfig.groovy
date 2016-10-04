@@ -3,12 +3,12 @@ grails.project.work.dir = 'target'
 grails.project.target.level = 1.7
 grails.project.source.level = 1.7
 
-grails.project.fork = [
-    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
-    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
-    war: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
-    console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
-]
+//grails.project.fork = [
+//    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
+//    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+//    war: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+//    console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
+//]
 
 grails.server.port.http = 9092
 
@@ -33,12 +33,13 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        compile 'joda-time:joda-time:2.7', 
+        compile 'joda-time:joda-time:2.7',
                 'io.vertx:vertx-core:2.1.5',
                 'io.vertx:lang-groovy:2.1.1-final',
                 'io.vertx:vertx-platform:2.1.5',
                 'io.vertx:vertx-hazelcast:2.1.5',
-                'org.apache.camel:camel-websocket:2.15.0'
+                'org.apache.camel:camel-websocket:2.15.0',
+                "org.infinispan:infinispan-core:5.2.1.Final"
 
         runtime 'org.postgresql:postgresql:9.3-1102-jdbc41'
         test 'org.grails:grails-datastore-test-support:1.0.2-grails-2.4'
@@ -58,14 +59,15 @@ grails.project.dependency.resolution = {
                 ':console:1.5.4',
                 ':dbconsole:1.1',
                 ':rabbitmq:1.0.0',
-                ':routing:1.4.1',
-                ':friendly-url:0.1',
-                ':domain-explorer:0.1'
+                ':routing:1.4.1'
+                //                ':friendly-url:0.1',
+                //                ':domain-explorer:0.1'
 
        runtime ':cache-headers:1.1.7',
                 ':hibernate4:4.3.6.1',
                 ':jquery:1.11.1',
-                ':database-migration:1.4.0'
+                ':database-migration:1.4.0',
+                ':healthcheck:1.0.0'
 
         test ':build-test-data:2.4.0'
     }

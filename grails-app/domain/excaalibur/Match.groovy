@@ -19,4 +19,9 @@ class Match {
         scoreAway nullable: true
         matchDate nullable: true
     }
+
+    static mapping = {
+        home lazy: false
+        away lazy: false
+    }
 }

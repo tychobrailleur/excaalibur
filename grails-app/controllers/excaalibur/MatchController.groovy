@@ -8,7 +8,8 @@ class MatchController {
     static allowedMethods = [ submitScore: 'POST' ]
 
     def list() {
-        [matches: Match.list()]
+        def matches = Match.list()
+        [matches: matches]
     }
 
     def index() {
