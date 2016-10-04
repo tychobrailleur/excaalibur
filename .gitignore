@@ -4,3 +4,6 @@ target/
 *.iml
 .sass-cache/
 web-app/plugins/
+.slcache/
+*.ipr
+*.iws
